@@ -14,6 +14,20 @@
     <link rel="stylesheet" href="css/heading.css">
     <link rel="stylesheet" href="css/body.css">
     <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .animated {
+            animation: bounce 2s infinite;
+        }
         .case-study {
             position: relative;
             overflow: hidden;
@@ -62,7 +76,7 @@
     </nav>
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
-            <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/paris.png" alt="">
+            <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5 animated" src="assets/img/paris.png" alt="">
             <!-- Masthead Heading-->
             <h1 class="masthead-heading mb-0">👋 Hey, I'm Kiran Mulawad!</h1>
             <!-- Icon Divider-->
@@ -91,19 +105,19 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="case-study">
-                        <img src="assets/img/portfolio/cabin.png" alt="Project 1">
+                        <img src="assets/img/portfolio/project1.jpg" alt="Project 1" class="animated">
                         <div class="overlay">Project 1 Details</div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="case-study">
-                        <img src="assets/img/portfolio/cake.png" alt="Project 2">
+                        <img src="assets/img/portfolio/project2.jpg" alt="Project 2" class="animated">
                         <div class="overlay">Project 2 Details</div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="case-study">
-                        <img src="assets/img/portfolio/game.png" alt="Project 3">
+                        <img src="assets/img/portfolio/project3.jpg" alt="Project 3" class="animated">
                         <div class="overlay">Project 3 Details</div>
                     </div>
                 </div>
@@ -242,4 +256,13 @@
     <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
