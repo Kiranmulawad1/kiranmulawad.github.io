@@ -14,29 +14,35 @@
     <link rel="stylesheet" href="css/heading.css">
     <link rel="stylesheet" href="css/body.css">
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
+        .case-study {
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .case-study img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        .case-study:hover img {
+            transform: scale(1.1);
+        }
+        .case-study .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            overflow-x: hidden;
-        }
-        .hero {
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
-        .hero:nth-child(1) { background-image: url('assets/img/portfolio/cabin.png'); }
-        .hero:nth-child(2) { background-image: url('assets/img/portfolio/cake.png'); }
-        .hero:nth-child(3) { background-image: url('assets/img/portfolio/circus.png'); }
-        .hero:nth-child(4) { background-image: url('assets/img/portfolio/game.png'); }
-        .hero:nth-child(5) { background-image: url('assets/img/portfolio/safe.png'); }
-        .hero:nth-child(6) { background-image: url('assets/img/portfolio/submarine.png'); }
+        .case-study:hover .overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body id="page-top">
@@ -70,9 +76,39 @@
         </div>
     </header>
     <section class="page-section" id="projects">
-        <div class="hero">Project 1</div>
-        <div class="hero">Project 2</div>
-        <div class="hero">Project 3</div>
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">PROJECTS</h2>
+            </div>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="case-study">
+                        <img src="assets/img/portfolio/project1.jpg" alt="Project 1">
+                        <div class="overlay">Project 1 Details</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="case-study">
+                        <img src="assets/img/portfolio/project2.jpg" alt="Project 2">
+                        <div class="overlay">Project 2 Details</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="case-study">
+                        <img src="assets/img/portfolio/project3.jpg" alt="Project 3">
+                        <div class="overlay">Project 3 Details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- Experience Section -->
     <section class="page-section bg-primary text-white mb-0" id="experience">
@@ -206,13 +242,4 @@
     <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Contact form JS-->
-    <script src="assets/mail/jqBootstrapValidation.js"></script>
-    <script src="assets/mail/contact_me.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-</body>
-</html>
+    <script src="https
