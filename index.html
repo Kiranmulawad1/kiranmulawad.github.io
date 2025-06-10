@@ -14,29 +14,49 @@
     <link rel="stylesheet" href="css/heading.css">
     <link rel="stylesheet" href="css/body.css">
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .animated {
+            animation: bounce 2s infinite;
+        }
+        .case-study {
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .case-study img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        .case-study:hover img {
+            transform: scale(1.1);
+        }
+        .case-study .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            overflow-x: hidden;
-        }
-        .scroll-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }
-        .section {
-            min-width: 100vw;
-            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
-        .section:nth-child(1) { background-color: #ff5722; }
-        .section:nth-child(2) { background-color: #2196f3; }
-        .section:nth-child(3) { background-color: #4caf50; }
+        .case-study:hover .overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body id="page-top">
@@ -56,7 +76,7 @@
     </nav>
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
-            <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/paris.png" alt="">
+            <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5 animated" src="assets/img/paris.png" alt="">
             <!-- Masthead Heading-->
             <h1 class="masthead-heading mb-0">👋 Hey, I'm Kiran Mulawad!</h1>
             <!-- Icon Divider-->
@@ -69,11 +89,42 @@
             <p class="pre-wrap masthead-subheading font-weight-light mb-0">AI Developer - Data Scientist - Content Creator</p>
         </div>
     </header>
-    <div class="scroll-container">
-        <div class="section">Section 1</div>
-        <div class="section">Section 2</div>
-        <div class="section">Section 3</div>
-    </div>
+    <section class="page-section" id="projects">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">PROJECTS</h2>
+            </div>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="case-study">
+                        <img src="assets/img/portfolio/cabin.png" alt="Project 1" class="animated">
+                        <div class="overlay">Project 1 Details</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="case-study">
+                        <img src="assets/img/portfolio/cake.png" alt="Project 2" class="animated">
+                        <div class="overlay">Project 2 Details</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="case-study">
+                        <img src="assets/img/portfolio/game.png" alt="Project 3" class="animated">
+                        <div class="overlay">Project 3 Details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Section -->
     <section class="page-section bg-primary text-white mb-0" id="experience">
         <div class="container">
             <!-- Experience Section Heading-->
@@ -97,6 +148,7 @@
             </div>
         </div>
     </section>
+    <!-- Education Section -->
     <section class="page-section" id="education">
         <div class="container">
             <!-- Education Section Heading-->
@@ -120,6 +172,7 @@
             </div>
         </div>
     </section>
+    <!-- About Me Section -->
     <section class="page-section bg-primary text-white mb-0" id="about-me">
         <div class="container">
             <!-- About Section Heading-->
@@ -143,6 +196,7 @@
             </div>
         </div>
     </section>
+    <!-- Contact Section -->
     <section class="page-section" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
@@ -153,4 +207,62 @@
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Content-->
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="text-muted">Phone</div>
+                        <div class="lead font-weight-bold">+491010101010</div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                        <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:name@example.com">kiranmulawad1@gmail.com.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="mb-4">LOCATION</h4>
+                    <p class="pre-wrap lead mb-0">📍 Heidelberg, Germany</p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="mb-4">AROUND THE WEB</h4><a class="btn btn-outline-light btn-social mx-1" href="https://github.com/Kiranmulawad1"><i class="fab fa-github"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/kiran-mulawad-4573b8229/"><i class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/kiran_mulawad1/"><i class="fab fa-fw fa-instagram"></i></a><a href="www.youtube.com/@KiranMulawad" class="btn btn-outline-light btn-social mx-1" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-youtube"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="mb-4">ABOUT PORTFOLIO</h4>
+                    <p class="pre-wrap lead mb-0">I created this site to serve as a dynamic record of my learning, experiences, and achievements. It will continue to evolve as I gain new skills, work on new projects, and explore new technologies.</p>
+                    <p class="pre-wrap lead mb-0">Thank you for visiting!</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <section class="copyright py-4 text-center text-white">
+        <div class="container"><small class="pre-wrap">Copyright © Your Website 2020</small></div>
+    </section>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+    <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
