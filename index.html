@@ -14,48 +14,47 @@
     <link rel="stylesheet" href="css/heading.css">
     <link rel="stylesheet" href="css/body.css">
     <style>
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+        @keyframes float {
+            0%, 100% {
                 transform: translateY(0);
             }
-            40% {
-                transform: translateY(-30px);
-            }
-            60% {
-                transform: translateY(-15px);
+            50% {
+                transform: translateY(-10px);
             }
         }
+
         .animated {
-            animation: bounce 2s infinite;
+            animation: float 6s ease-in-out infinite;
         }
-        .case-study {
-            position: relative;
-            overflow: hidden;
-            margin: 20px 0;
+
+        .container-query {
+            container-type: inline-size;
         }
-        .case-study img {
-            width: 100%;
-            transition: transform 0.5s ease;
+
+        @media (container-type: inline-size) and (max-width: 600px) {
+            .container-query {
+                background-color: #ff5722;
+            }
         }
-        .case-study:hover img {
-            transform: scale(1.1);
+
+        .frosted-glass {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
         }
-        .case-study .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+
+        .interactive {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .case-study:hover .overlay {
-            opacity: 1;
+
+        .interactive:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .parent:has(.child) {
+            border: 2px solid blue;
         }
     </style>
 </head>
@@ -105,26 +104,25 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="case-study">
-                        <img src="assets/img/portfolio/cabin.png" alt="Project 1" class="animated">
+                        <img src="assets/img/portfolio/project1.jpg" alt="Project 1" class="interactive">
                         <div class="overlay">Project 1 Details</div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="case-study">
-                        <img src="assets/img/portfolio/cake.png" alt="Project 2" class="animated">
+                        <img src="assets/img/portfolio/project2.jpg" alt="Project 2" class="interactive">
                         <div class="overlay">Project 2 Details</div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="case-study">
-                        <img src="assets/img/portfolio/game.png" alt="Project 3" class="animated">
+                        <img src="assets/img/portfolio/project3.jpg" alt="Project 3" class="interactive">
                         <div class="overlay">Project 3 Details</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Experience Section -->
     <section class="page-section bg-primary text-white mb-0" id="experience">
         <div class="container">
             <!-- Experience Section Heading-->
@@ -148,7 +146,6 @@
             </div>
         </div>
     </section>
-    <!-- Education Section -->
     <section class="page-section" id="education">
         <div class="container">
             <!-- Education Section Heading-->
@@ -172,7 +169,6 @@
             </div>
         </div>
     </section>
-    <!-- About Me Section -->
     <section class="page-section bg-primary text-white mb-0" id="about-me">
         <div class="container">
             <!-- About Section Heading-->
@@ -196,7 +192,6 @@
             </div>
         </div>
     </section>
-    <!-- Contact Section -->
     <section class="page-section" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
